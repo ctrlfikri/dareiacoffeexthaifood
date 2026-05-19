@@ -3,62 +3,82 @@
     <!-- ═══════════════════════════════════════════════
          HERO SECTION
     ═══════════════════════════════════════════════ -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section class="w-full relative">
 
-    <!-- Background store layer -->
-    <div class="absolute inset-0">
-      <img
-        src="/store.jpg"
-        class="w-full h-full object-cover blur-sm opacity-20 scale-105"
-      />
-      <div class="absolute inset-0 bg-charcoal/85"></div>
-    </div>
+  <div class="w-full h-[55vh] md:h-[65vh] lg:h-[70vh] overflow-hidden">
 
-    <!-- Content wrapper -->
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 pt-24 flex flex-col items-center">
+    <HeroCarousel :slides="heroSlides" />
 
-      <!-- 🧠 HERO TEXT (smaller + cleaner hierarchy) -->
-      <div class="text-center mb-8">
-        <h1 class="font-display text-cream text-4xl md:text-6xl tracking-wider">
-          DAREIA
-        </h1>
+  </div>
 
-        <p class="text-gold tracking-[0.35em] text-xs md:text-sm mt-2">
-          COFFEE × THAI FOOD
-        </p>
-      </div>
+</section>
 
-      <!-- 🎯 FIXED RATIO CAROUSEL -->
-      <div class="w-full flex justify-center">
+<section class="relative py-24 px-4 overflow-hidden">
 
-        <div class="w-full max-w-5xl">
-          <div class="aspect-[5/2] md:aspect-[5/2] lg:aspect-[5/2] overflow-hidden rounded-xl border border-gold/20 shadow-2xl">
+  <!-- Background glow -->
+  <div class="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal-light to-charcoal"></div>
 
-            <HeroCarousel :slides="heroSlides" />
+  <!-- Floating blur orbs -->
+  <div class="absolute top-10 left-10 w-72 h-72 bg-primary/20 blur-3xl rounded-full animate-pulse"></div>
+  <div class="absolute bottom-10 right-10 w-72 h-72 bg-gold/10 blur-3xl rounded-full animate-pulse"></div>
 
-          </div>
-        </div>
+  <div class="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      </div>
+    <!-- LEFT: TEXT STORY -->
+    <div>
 
-      <!-- CTA -->
-      <div class="text-center mt-10">
-        <p class="text-cream/60 max-w-xl mx-auto text-sm md:text-base">
-          Where Thailand meets Penang — crafted flavors, bold comfort, unforgettable meals.
-        </p>
+      <h2 class="font-display text-4xl md:text-5xl text-cream leading-tight">
+        Flavours that
+        <span class="text-gold">move</span> with emotion
+      </h2>
 
-        <div class="flex gap-4 justify-center mt-6">
-          <NuxtLink to="/menu" class="btn-primary px-8 py-3">
-            Explore Menu
-          </NuxtLink>
-          <NuxtLink to="/booking" class="btn-outline px-8 py-3">
-            Book Table
-          </NuxtLink>
-        </div>
+      <p class="text-cream/60 mt-6 text-sm leading-relaxed">
+        At Dareia, every dish is crafted with intention — bold Thai spices,
+        comforting Western classics, and coffee that completes the moment.
+      </p>
+
+      <div class="flex gap-4 mt-8">
+        <NuxtLink to="/menu" class="btn-primary px-6 py-3">
+          Explore Menu
+        </NuxtLink>
+
+        <NuxtLink to="/booking" class="btn-outline px-6 py-3">
+          Book Table
+        </NuxtLink>
       </div>
 
     </div>
-  </section>
+
+    <!-- RIGHT: 3D STYLE FOOD HERO -->
+    <div class="relative flex justify-center">
+
+      <!-- rotating glow ring -->
+      <div class="absolute w-72 h-72 rounded-full border border-gold/20 animate-spin-slow"></div>
+
+      <!-- MAIN OBJECT -->
+      <div class="relative w-64 h-64 md:w-80 md:h-80">
+
+        <img
+          src="/tomyam.png"
+          class="w-full h-full object-contain drop-shadow-2xl animate-[float_4s_ease-in-out_infinite]"
+        />
+
+      </div>
+
+      <!-- floating labels -->
+      <div class="absolute top-10 left-0 bg-primary border border-gold/30 px-3 py-1 text-xs text-gold animate-bounce">
+        🌶️ Signature Tom Yam
+      </div>
+
+      <div class="absolute bottom-10 right-0 bg-charcoal border border-gold/20 px-3 py-1 text-xs text-cream/70 animate-pulse">
+        Fresh Daily Cooked
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
     <!-- ═══════════════════════════════════════════════
          BEST SELLERS
