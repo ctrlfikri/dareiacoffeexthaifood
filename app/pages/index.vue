@@ -85,38 +85,65 @@
     ═══════════════════════════════════════════════ -->
     <section class="py-20 px-4 bg-charcoal bg-thai-pattern">
       <div class="max-w-6xl mx-auto">
+
+        <!-- Header -->
         <div class="text-center mb-14">
           <div class="ornamental-line text-xs mb-4 justify-center">
             <span class="tracking-[0.4em] text-gold/50 text-xs">MUST TRY</span>
           </div>
-          <h2 class="section-title text-3xl sm:text-4xl mb-3">Our Best Sellers</h2>
+
+          <h2 class="section-title text-3xl sm:text-4xl mb-3">
+            Our Best Sellers
+          </h2>
+
           <p class="text-cream/50 font-sans max-w-md mx-auto text-sm">
-            Dishes our regulars can't stop ordering. Crowd-pleasing, full of flavour, straight from the heart of Thailand.
+            Dishes our regulars can't stop ordering. Crowd-pleasing, full of flavour.
           </p>
         </div>
 
+        <!-- Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
           <div
             v-for="item in bestSellers"
-            :key="item.name"
-            class="menu-card group cursor-pointer"
-            @click="goToMenu"
+            :key="item.id"
+            class="group bg-charcoal-light border border-gold/10 hover:border-gold/40 transition-all duration-300 overflow-hidden"
           >
-            <!-- Image placeholder with emoji -->
-            <div
-              class="h-48 flex items-center justify-center text-6xl"
-              :style="`background: linear-gradient(135deg, ${item.bgFrom}, ${item.bgTo})`"
-            >
-              {{ item.emoji }}
-            </div>
-            <div class="p-5">
-              <div class="flex items-start justify-between gap-2 mb-1">
-                <h3 class="font-sans font-semibold text-cream text-base leading-tight">{{ item.name }}</h3>
-                <span class="badge-popular whitespace-nowrap flex-shrink-0">Best Seller</span>
+
+            <!-- IMAGE -->
+            <div class="relative overflow-hidden aspect-[4/5]">
+              <img
+                :src="item.image"
+                :alt="item.name"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+
+              <!-- gradient overlay -->
+              <div class="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/20 to-transparent"></div>
+
+              <!-- badge -->
+              <div class="absolute top-3 right-3 bg-gold text-charcoal text-xs px-3 py-1 font-semibold">
+                Best Seller
               </div>
-              <p class="text-cream/50 font-sans text-xs mb-3 leading-relaxed">{{ item.desc }}</p>
-              <div class="flex items-center justify-between">
-                <span class="font-display text-gold text-lg">{{ item.price }}</span>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="p-5 flex flex-col gap-2">
+
+              <h3 class="font-sans font-semibold text-cream text-base leading-tight">
+                {{ item.name }}
+              </h3>
+
+              <p class="text-cream/50 font-sans text-xs leading-relaxed">
+                {{ item.desc }}
+              </p>
+
+              <div class="flex items-center justify-between mt-3">
+                <span class="font-display text-gold text-lg">
+                  {{ item.price }}
+                </span>
+
                 <button
                   class="text-xs border border-gold/40 text-gold px-3 py-1.5 hover:bg-gold hover:text-charcoal transition-colors"
                   @click.stop="addToCartDirect(item)"
@@ -124,13 +151,19 @@
                   + Add
                 </button>
               </div>
+
             </div>
           </div>
+
         </div>
 
+        <!-- CTA -->
         <div class="text-center mt-10">
-          <NuxtLink to="/menu" class="btn-outline px-10">View Full Menu</NuxtLink>
+          <NuxtLink to="/menu" class="btn-outline px-10">
+            View Full Menu
+          </NuxtLink>
         </div>
+
       </div>
     </section>
 
@@ -258,64 +291,46 @@ const combos = [
 
 const bestSellers = [
   {
-    id: 101,
-    name: 'Ikan Siakap Masak Tiga Rasa Thai',
-    desc: 'Whole snapper in sweet-sour-spicy Thai three-flavour sauce. A house signature.',
-    price: 'RM35.90',
-    priceNum: 35.90,
-    emoji: '🐟',
-    bgFrom: '#1A3300',
-    bgTo: '#2D1F0E',
+    id: 1,
+    name: 'Ayam Pad Prik',
+    image: '/best-seller/ayampadrik.jpg',
+    desc: 'Spicy Thai stir-fried chicken with bold chilli punch.',
+    price: 'RM 9.90',
   },
   {
-    id: 102,
+    id: 2,
+    name: 'Chicken Chop',
+    image: '/best-seller/chickenchop.jpg',
+    desc: 'Juicy grilled chicken served with signature sauce & fries.',
+    price: 'RM 17.90',
+  },
+  {
+    id: 3,
     name: 'Nasi Goreng Kampung Thai',
-    desc: 'Classic fried rice with anchovies, chilli, and aromatic Thai herbs.',
-    price: 'RM9.90',
-    priceNum: 9.90,
-    emoji: '🍚',
-    bgFrom: '#550000',
-    bgTo: '#2D1F0E',
+    image: '/best-seller/nasigorengkampugthai.jpg',
+    desc: 'Classic Thai village fried rice with anchovies & spice.',
+    price: 'RM 9.90',
   },
   {
-    id: 103,
+    id: 4,
+    name: 'Siakap Tiga Rasa',
+    image: '/best-seller/siakaptigarase.jpg',
+    desc: 'Sea bass in sweet, sour & spicy Thai sauce.',
+    price: 'RM 35.90',
+  },
+  {
+    id: 5,
+    name: 'Thai Milk Tea',
+    image: '/best-seller/thaimilktea.jpg',
+    desc: 'Creamy, sweet Thai tea brewed the authentic way.',
+    price: 'RM 7.90',
+  },
+  {
+    id: 6,
     name: 'Tom Yam Berkrim Seafood',
-    desc: 'Rich creamy Tom Yam broth loaded with fresh seafood. Spicy & fragrant.',
-    price: 'RM14.90',
-    priceNum: 14.90,
-    emoji: '🍲',
-    bgFrom: '#3D2200',
-    bgTo: '#2D1F0E',
-  },
-  {
-    id: 104,
-    name: 'Ayam Pad Prik Thai',
-    desc: 'Stir-fried chicken with Thai chilli paste. Simple, bold, addictive.',
-    price: 'RM9.90',
-    priceNum: 9.90,
-    emoji: '🌶️',
-    bgFrom: '#550000',
-    bgTo: '#1A1008',
-  },
-  {
-    id: 105,
-    name: 'Spaghetti Aglio Olio Spicy Prawn',
-    desc: 'Al dente spaghetti with garlic, olive oil, and juicy spicy prawns.',
-    price: 'RM17.90',
-    priceNum: 17.90,
-    emoji: '🍝',
-    bgFrom: '#1A2D00',
-    bgTo: '#2D1F0E',
-  },
-  {
-    id: 106,
-    name: 'Thai Milk Tea (Cha Yen)',
-    desc: 'Authentic Thai iced milk tea. Creamy, sweet, and the perfect companion.',
-    price: 'RM7.90',
-    priceNum: 7.90,
-    emoji: '🧋',
-    bgFrom: '#3D2200',
-    bgTo: '#550000',
+    image: '/best-seller/tomyamberkrimseafood.jpg',
+    desc: 'Rich creamy Tom Yam loaded with fresh seafood.',
+    price: 'RM 14.90',
   },
 ]
 
