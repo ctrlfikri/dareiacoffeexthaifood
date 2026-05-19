@@ -150,75 +150,76 @@ const categories = [
 
 const menuItems = [
   // ── WESTERN FOOD ──────────────────────────────────────
-  { id: 1,  category: 'western', name: 'Chicken Chop Mushroom Brown Sauce', desc: 'Tender chicken chop with creamy mushroom brown sauce, served with fries.', price: 17.90, spicy: false, popular: true },
-  { id: 2,  category: 'western', name: 'Grilled Chicken with Fries', desc: 'Juicy grilled chicken with crispy golden fries.', price: 17.90, spicy: false, popular: false },
-  { id: 3,  category: 'western', name: 'Fish & Chips', desc: 'Crispy battered fish fillet with thick-cut fries.', price: 18.90, spicy: false, popular: true },
-  { id: 4,  category: 'western', name: 'Spaghetti Beef Bolognese (Meatball)', desc: 'Rich beef bolognese sauce with juicy meatballs on spaghetti.', price: 16.90, spicy: false, popular: false },
-  { id: 5,  category: 'western', name: 'Spaghetti Carbonara (Chicken Slice)', desc: 'Creamy carbonara with tender chicken slices.', price: 16.90, spicy: false, popular: true },
-  { id: 6,  category: 'western', name: 'Spaghetti Aglio Olio Spicy Prawn', desc: 'Garlic-infused spaghetti with spicy jumbo prawns.', price: 17.90, spicy: true, popular: true },
+{ id: 1, image: 1, category: 'western', name: 'Chicken Chop Mushroom Brown Sauce', desc: 'Tender chicken chop with creamy mushroom brown sauce, served with fries.', price: 17.90, spicy: false, popular: true },
+{ id: 2, image: 2, category: 'western', name: 'Grilled Chicken with Fries', desc: 'Juicy grilled chicken with crispy golden fries.', price: 17.90, spicy: false, popular: false },
+{ id: 3, image: 3, category: 'western', name: 'Fish & Chips', desc: 'Crispy battered fish fillet with thick-cut fries.', price: 18.90, spicy: false, popular: true },
+{ id: 4, image: 4, category: 'western', name: 'Spaghetti Beef Bolognese (Meatball)', desc: 'Rich beef bolognese sauce with juicy meatballs.', price: 16.90, spicy: false, popular: false },
+{ id: 5, image: 5, category: 'western', name: 'Spaghetti Carbonara (Chicken Slice)', desc: 'Creamy carbonara with chicken slices.', price: 16.90, spicy: false, popular: true },
+{ id: 6, image: 6, category: 'western', name: 'Spaghetti Aglio Olio Spicy Prawn', desc: 'Garlic spaghetti with spicy prawns.', price: 17.90, spicy: true, popular: true },
 
   // ── THAI NASI / RICE ─────────────────────────────────
-  { id: 10, category: 'thai', name: 'Nasi Goreng Tom Yam', desc: 'Tom Yam flavoured fried rice — fragrant, spicy & tangy.', price: 11.90, spicy: true, popular: true },
-  { id: 11, category: 'thai', name: 'Nasi Goreng Seafood Thai', desc: 'Thai-style seafood fried rice with fresh catches.', price: 12.90, spicy: true, popular: true },
-  { id: 12, category: 'thai', name: 'Nasi Goreng Ayam Pandan', desc: 'Fragrant pandan chicken fried rice — aromatic & light.', price: 11.90, spicy: false, popular: false },
-  { id: 13, category: 'thai', name: 'Nasi Goreng Kampung Thai', desc: 'Classic Thai village-style fried rice with chilli & anchovies.', price: 9.90, spicy: true, popular: true },
-  { id: 14, category: 'thai', name: 'Nasi Goreng Pattaya', desc: 'Pattaya-style fried rice wrapped in a fluffy egg omelette.', price: 9.90, spicy: false, popular: false },
-  { id: 15, category: 'thai', name: 'Nasi Putih / Goreng Daging Masak Merah', desc: 'Beef in spicy red Thai sauce, with white or fried rice.', price: 10.90, spicy: true, popular: false, altPrice: 11.90 },
-  { id: 16, category: 'thai', name: 'Nasi Putih / Goreng Ayam Pad Prik', desc: 'Thai chilli stir-fried chicken with white or fried rice.', price: 10.90, spicy: true, popular: true, altPrice: 11.90 },
-  { id: 17, category: 'thai', name: 'Nasi Putih / Goreng Ayam Kunyit', desc: 'Turmeric chicken with white or fried rice. Golden & aromatic.', price: 10.90, spicy: false, popular: false, altPrice: 11.90 },
+{ id: 10, image: 10, category: 'thai', name: 'Nasi Goreng Tom Yam', desc: 'Spicy sour Tom Yam fried rice.', price: 11.90, spicy: true, popular: true },
+{ id: 11, image: 11, category: 'thai', name: 'Nasi Goreng Seafood Thai', desc: 'Thai seafood fried rice.', price: 12.90, spicy: true, popular: true },
+{ id: 12, image: 12, category: 'thai', name: 'Nasi Goreng Ayam Pandan', desc: 'Fragrant pandan chicken fried rice.', price: 11.90, spicy: false, popular: false },
+{ id: 13, image: 13, category: 'thai', name: 'Nasi Goreng Kampung Thai', desc: 'Village-style Thai fried rice.', price: 9.90, spicy: true, popular: true },
+{ id: 14, image: 14, category: 'thai', name: 'Nasi Goreng Pattaya', desc: 'Egg-wrapped fried rice.', price: 9.90, spicy: false, popular: false },
+{ id: 15, image: 15, category: 'thai', name: 'Daging Masak Merah', desc: 'Beef in spicy red Thai sauce.', price: 10.90, spicy: true, popular: false, altPrice: 11.90 },
+{ id: 16, image: 16, category: 'thai', name: 'Ayam Pad Prik', desc: 'Thai chilli chicken stir fry.', price: 10.90, spicy: true, popular: true, altPrice: 11.90 },
+{ id: 17, image: 17, category: 'thai', name: 'Ayam Kunyit', desc: 'Turmeric chicken, golden and aromatic.', price: 10.90, spicy: false, popular: false, altPrice: 11.90 },
 
   // ── THAI MEE / NOODLES ────────────────────────────────
-  { id: 20, category: 'thai', name: 'Mee/Bihun/Koey Teow Goreng Ayam', desc: 'Choice of noodle stir-fried with chicken. Comfort in a bowl.', price: 8.90, spicy: false, popular: false },
-  { id: 21, category: 'thai', name: 'Mee/Bihun/Koey Teow Goreng Seafood', desc: 'Stir-fried noodles with fresh seafood medley.', price: 10.90, spicy: false, popular: false },
-  { id: 22, category: 'thai', name: 'Mee/Bihun Tom Yam Ayam', desc: 'Noodles in a spicy, tangy Tom Yam broth with chicken.', price: 9.90, spicy: true, popular: true },
-  { id: 23, category: 'thai', name: 'Mee/Bihun Tom Yam Seafood', desc: 'Tom Yam noodles with an abundance of fresh seafood.', price: 11.90, spicy: true, popular: true },
-  { id: 24, category: 'thai', name: 'Rad Na', desc: 'Wide rice noodles in thick gravy sauce — a Thai classic.', price: 9.90, spicy: false, popular: false },
+{ id: 20, image: 20, category: 'thai', name: 'Mee/Bihun Ayam Goreng', desc: 'Stir-fried noodles with chicken.', price: 8.90, spicy: false, popular: false },
+{ id: 21, image: 21, category: 'thai', name: 'Mee Seafood Goreng', desc: 'Seafood stir-fried noodles.', price: 10.90, spicy: false, popular: false },
+{ id: 22, image: 22, category: 'thai', name: 'Mee Tom Yam Ayam', desc: 'Tom Yam noodle soup with chicken.', price: 9.90, spicy: true, popular: true },
+{ id: 23, image: 23, category: 'thai', name: 'Mee Tom Yam Seafood', desc: 'Seafood Tom Yam noodles.', price: 11.90, spicy: true, popular: true },
+{ id: 24, image: 24, category: 'thai', name: 'Rad Na', desc: 'Thai gravy noodles.', price: 9.90, spicy: false, popular: false },
 
   // ── TOM YUM / SOUP ────────────────────────────────────
-  { id: 30, category: 'thai', name: 'Tom Yam Jernih Ayam/Beef', desc: 'Clear Tom Yam broth — light, sour & fragrant with chicken or beef.', price: 10.90, spicy: true, popular: false },
-  { id: 31, category: 'thai', name: 'Tom Yam Jernih Seafood', desc: 'Clear Tom Yam with generous seafood. Bright & aromatic.', price: 13.90, spicy: true, popular: true },
-  { id: 32, category: 'thai', name: 'Tom Yam Berkrim Ayam/Beef', desc: 'Creamy Tom Yam — rich coconut milk base, bold spice.', price: 11.90, spicy: true, popular: true },
-  { id: 33, category: 'thai', name: 'Tom Yam Berkrim Seafood', desc: 'Creamy Tom Yam packed with mixed seafood. House favourite.', price: 14.90, spicy: true, popular: true },
-  { id: 34, category: 'thai', name: 'Sup Sayur Thai Campur', desc: 'Clear Thai mixed vegetable soup — light & healthy.', price: 9.90, spicy: false, popular: false },
-  { id: 35, category: 'thai', name: 'Tom Kha Ayam/Daging', desc: 'Coconut galangal soup with chicken or beef. Fragrant & soothing.', price: 10.90, spicy: false, popular: false },
+{ id: 30, image: 30, category: 'thai', name: 'Tom Yam Clear Ayam/Beef', desc: 'Clear spicy sour soup.', price: 10.90, spicy: true, popular: false },
+{ id: 31, image: 31, category: 'thai', name: 'Tom Yam Clear Seafood', desc: 'Seafood clear Tom Yam.', price: 13.90, spicy: true, popular: true },
+{ id: 32, image: 32, category: 'thai', name: 'Tom Yam Creamy Ayam/Beef', desc: 'Creamy spicy coconut soup.', price: 11.90, spicy: true, popular: true },
+{ id: 33, image: 33, category: 'thai', name: 'Tom Yam Creamy Seafood', desc: 'Rich seafood creamy Tom Yam.', price: 14.90, spicy: true, popular: true },
+{ id: 34, image: 34, category: 'thai', name: 'Sup Sayur Thai', desc: 'Light vegetable soup.', price: 9.90, spicy: false, popular: false },
+{ id: 35, image: 35, category: 'thai', name: 'Tom Kha Ayam/Daging', desc: 'Coconut galangal soup.', price: 10.90, spicy: false, popular: false },
 
   // ── AYAM & DAGING ────────────────────────────────────
-  { id: 40, category: 'thai', name: 'Ayam / Daging Masak Halia Thai', desc: 'Chicken or beef stir-fried with fresh ginger. Warming & bold.', price: 9.90, spicy: false, popular: false, altPrice: 10.90 },
-  { id: 41, category: 'thai', name: 'Ayam / Daging Masak Merah Thai', desc: 'Chicken or beef in spicy red Thai sauce.', price: 9.90, spicy: true, popular: false, altPrice: 10.90 },
-  { id: 42, category: 'thai', name: 'Ayam / Daging Pad Prik Thai', desc: 'Stir-fried chilli chicken or beef — a Thai staple.', price: 9.90, spicy: true, popular: true, altPrice: 10.90 },
-  { id: 43, category: 'thai', name: 'Ayam / Daging Masak Kunyit', desc: 'Golden turmeric-braised chicken or beef. Rich & aromatic.', price: 9.90, spicy: false, popular: false, altPrice: 10.90 },
+{ id: 40, image: 40, category: 'thai', name: 'Ayam/Daging Halia', desc: 'Ginger stir fry.', price: 9.90, spicy: false, popular: false, altPrice: 10.90 },
+{ id: 41, image: 41, category: 'thai', name: 'Ayam/Daging Masak Merah', desc: 'Spicy red Thai sauce.', price: 9.90, spicy: true, popular: false, altPrice: 10.90 },
+{ id: 42, image: 42, category: 'thai', name: 'Ayam/Daging Pad Prik', desc: 'Chilli stir fry.', price: 9.90, spicy: true, popular: true, altPrice: 10.90 },
+{ id: 43, image: 43, category: 'thai', name: 'Ayam/Daging Kunyit', desc: 'Turmeric chicken/beef.', price: 9.90, spicy: false, popular: false, altPrice: 10.90 },
 
   // ── SEAFOOD ──────────────────────────────────────────
-  { id: 50, category: 'thai', name: 'Ikan Goreng Thai Bersambal', desc: 'Whole fried fish with traditional Thai sambal. Crispy & fiery.', price: 37.90, spicy: true, popular: false },
-  { id: 51, category: 'thai', name: 'Ikan Siakap Stim Limau Thai', desc: 'Steamed sea bass with Thai lime sauce. Light, fresh & fragrant.', price: 35.90, spicy: false, popular: true },
-  { id: 52, category: 'thai', name: 'Ikan Siakap Masak Tiga Rasa Thai', desc: 'Sea bass in sweet-sour-spicy three-flavour sauce. A must-try!', price: 35.90, spicy: true, popular: true },
-  { id: 53, category: 'thai', name: 'Sotong Goreng Tepung', desc: 'Crispy battered squid rings. Golden & irresistible.', price: 12.90, spicy: false, popular: false },
-  { id: 54, category: 'thai', name: 'Udang Buttermilk (6 pcs)', desc: 'Juicy prawns in creamy buttermilk sauce. Rich & indulgent.', price: 23.90, spicy: false, popular: true },
+{ id: 50, image: 50, category: 'thai', name: 'Ikan Goreng Bersambal', desc: 'Whole fried fish with sambal.', price: 37.90, spicy: true, popular: false },
+{ id: 51, image: 51, category: 'thai', name: 'Siakap Stim Limau', desc: 'Steamed sea bass with lime.', price: 35.90, spicy: false, popular: true },
+{ id: 52, image: 52, category: 'thai', name: 'Siakap 3 Rasa', desc: 'Sweet sour spicy fish.', price: 35.90, spicy: true, popular: true },
+{ id: 53, image: 53, category: 'thai', name: 'Sotong Goreng Tepung', desc: 'Crispy squid rings.', price: 12.90, spicy: false, popular: false },
+{ id: 54, image: 54, category: 'thai', name: 'Udang Buttermilk', desc: 'Creamy butter prawns.', price: 23.90, spicy: false, popular: true },
 
   // ── SAYUR ────────────────────────────────────────────
-  { id: 60, category: 'thai', name: 'Kangkung Goreng Belacan Thai', desc: 'Water spinach stir-fried with Thai shrimp paste. Flame-cooked.', price: 8.90, spicy: true, popular: false },
-  { id: 61, category: 'thai', name: 'Kailan Goreng Ikan Masin', desc: 'Chinese kale stir-fried with salted fish. Bold & savoury.', price: 8.90, spicy: false, popular: false },
+{ id: 60, image: 60, category: 'thai', name: 'Kangkung Belacan', desc: 'Water spinach stir fry.', price: 8.90, spicy: true, popular: false },
+{ id: 61, image: 61, category: 'thai', name: 'Kailan Ikan Masin', desc: 'Kale with salted fish.', price: 8.90, spicy: false, popular: false },
 
   // ── ADD-ONS ──────────────────────────────────────────
-  { id: 65, category: 'snacks', name: 'Nasi Putih', desc: 'Steamed white rice.', price: 2.00, spicy: false, popular: false },
-  { id: 66, category: 'snacks', name: 'Telur Goreng Mata', desc: 'Sunny-side-up egg.', price: 2.00, spicy: false, popular: false },
-  { id: 67, category: 'snacks', name: 'Telur Dadar', desc: 'Thai-style omelette.', price: 2.00, spicy: false, popular: false },
-  { id: 68, category: 'snacks', name: 'Fries', desc: 'Crispy golden fries.', price: 9.90, spicy: false, popular: false },
-  { id: 69, category: 'snacks', name: 'Sausage', desc: 'Grilled sausage.', price: 9.90, spicy: false, popular: false },
+{ id: 65, image: 65, category: 'snacks', name: 'Nasi Putih', desc: 'Steamed rice.', price: 2.00, spicy: false, popular: false },
+{ id: 66, image: 66, category: 'snacks', name: 'Telur Mata', desc: 'Fried egg.', price: 2.00, spicy: false, popular: false },
+{ id: 67, image: 67, category: 'snacks', name: 'Telur Dadar', desc: 'Omelette.', price: 2.00, spicy: false, popular: false },
+{ id: 68, image: 68, category: 'snacks', name: 'Fries', desc: 'Crispy fries.', price: 9.90, spicy: false, popular: false },
+{ id: 69, image: 69, category: 'snacks', name: 'Sausage', desc: 'Grilled sausage.', price: 9.90, spicy: false, popular: false },
 
   // ── DRINKS: COFFEE ────────────────────────────────────
-  { id: 70, category: 'drinks', name: 'Espresso', desc: 'Single shot. Pure & intense.', price: 7.90, spicy: false, popular: false },
-  { id: 71, category: 'drinks', name: 'Americano / Long Black', desc: 'Hot RM8.90 · Cold RM10.90. Bold espresso diluted to perfection.', price: 8.90, spicy: false, popular: false, altPrice: 10.90 },
-  { id: 72, category: 'drinks', name: 'Latte', desc: 'Hot RM10.90 · Cold RM12.90. Smooth espresso with silky milk.', price: 10.90, spicy: false, popular: true, altPrice: 12.90 },
-  { id: 73, category: 'drinks', name: 'Cappuccino', desc: 'Hot RM10.90 · Cold RM12.90. Frothy & balanced.', price: 10.90, spicy: false, popular: false, altPrice: 12.90 },
-  { id: 74, category: 'drinks', name: 'Mocha', desc: 'Hot RM11.90 · Cold RM13.90. Espresso with rich chocolate.', price: 11.90, spicy: false, popular: false, altPrice: 13.90 },
-  { id: 75, category: 'drinks', name: 'Spanish Latte', desc: 'Hot RM11.90 · Cold RM13.90. Condensed milk latte — sweet & creamy.', price: 11.90, spicy: false, popular: true, altPrice: 13.90 },
-  { id: 76, category: 'drinks', name: 'Matcha', desc: 'Hot RM12.90 · Cold RM14.90. Premium Japanese matcha.', price: 12.90, spicy: false, popular: false, altPrice: 14.90 },
-  { id: 77, category: 'drinks', name: 'Signature Chocolate', desc: 'Hot RM11.90 · Cold RM13.90. Indulgent house chocolate drink.', price: 11.90, spicy: false, popular: false, altPrice: 13.90 },
+{ id: 70, image: 70, category: 'drinks', name: 'Espresso', desc: 'Strong coffee shot.', price: 7.90, spicy: false, popular: false },
+{ id: 71, image: 71, category: 'drinks', name: 'Americano', desc: 'Bold black coffee.', price: 8.90, spicy: false, popular: false, altPrice: 10.90 },
+{ id: 72, image: 72, category: 'drinks', name: 'Latte', desc: 'Smooth milk coffee.', price: 10.90, spicy: false, popular: true, altPrice: 12.90 },
+{ id: 73, image: 73, category: 'drinks', name: 'Cappuccino', desc: 'Foamy coffee.', price: 10.90, spicy: false, popular: false, altPrice: 12.90 },
+{ id: 74, image: 74, category: 'drinks', name: 'Mocha', desc: 'Chocolate coffee.', price: 11.90, spicy: false, popular: false, altPrice: 13.90 },
+{ id: 75, image: 75, category: 'drinks', name: 'Spanish Latte', desc: 'Sweet creamy latte.', price: 11.90, spicy: false, popular: true, altPrice: 13.90 },
+{ id: 76, image: 76, category: 'drinks', name: 'Matcha', desc: 'Japanese green tea.', price: 12.90, spicy: false, popular: false, altPrice: 14.90 },
+{ id: 77, image: 77, category: 'drinks', name: 'Chocolate', desc: 'Rich chocolate drink.', price: 11.90, spicy: false, popular: false, altPrice: 13.90 },
+
 
   // ── DRINKS: THAI ─────────────────────────────────────
-  { id: 80, category: 'drinks', name: 'Thai Green Milk Tea (Cha Keow Yen)', desc: 'Hot or Cold RM8.90. Authentic Thai green tea with milk.', price: 8.90, spicy: false, popular: true },
-  { id: 81, category: 'drinks', name: 'Thai Milk Tea (Cha Yen)', desc: 'Hot or Cold RM7.90. The classic orange Thai milk tea.', price: 7.90, spicy: false, popular: true },
+{ id: 80, image: 80, category: 'drinks', name: 'Thai Green Milk Tea', desc: 'Authentic Thai tea.', price: 8.90, spicy: false, popular: true },
+{ id: 81, image: 81, category: 'drinks', name: 'Thai Milk Tea', desc: 'Classic Thai milk tea.', price: 7.90, spicy: false, popular: true },
 
   // ── DRINKS: CLASSIC ──────────────────────────────────
   { id: 85, category: 'drinks', name: 'Sirap Pandan Rose (Iced)', desc: 'Sweet pandan rose syrup on ice.', price: 3.90, spicy: false, popular: false },

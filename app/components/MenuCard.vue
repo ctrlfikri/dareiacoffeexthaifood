@@ -1,35 +1,69 @@
 <template>
-  <div class="menu-card flex flex-col">
-    <!-- Top: emoji / icon area -->
-    <div
-      class="h-32 flex items-center justify-center text-5xl flex-shrink-0"
-      :style="bgStyle"
-    >
-      {{ emoji }}
+  <div
+    class="group relative overflow-hidden rounded-xl border border-gold/20 bg-charcoal shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
+  >
+    <!-- IMAGE -->
+    <div class="relative h-36 w-full overflow-hidden bg-charcoal">
+      <img
+        :src="imageSrc"
+        :alt="item.name"
+        loading="lazy"
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+      />
+
+      <!-- gradient overlay -->
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/10 to-transparent"></div>
+
+      <!-- badges -->
+      <div class="absolute top-2 left-2 flex gap-2">
+        <span
+          v-if="item.popular"
+          class="bg-gold text-charcoal text-[10px] px-2 py-0.5 rounded-full font-bold uppercase tracking-wider"
+        >
+          Popular
+        </span>
+
+        <span
+          v-if="item.spicy"
+          class="bg-red-600/90 text-white text-[10px] px-2 py-0.5 rounded-full"
+        >
+          🌶 Spicy
+        </span>
+      </div>
     </div>
 
-    <!-- Content -->
-    <div class="p-4 flex flex-col flex-1">
-      <div class="flex items-start gap-2 mb-1">
-        <h3 class="font-sans font-semibold text-cream text-sm leading-snug flex-1">{{ item.name }}</h3>
-        <div class="flex flex-col items-end gap-1 flex-shrink-0">
-          <span v-if="item.popular" class="badge-popular">Popular</span>
-          <span v-if="item.spicy" class="text-xs">🌶️</span>
-        </div>
-      </div>
-      <p class="text-cream/40 font-sans text-xs leading-relaxed flex-1 mb-3">{{ item.desc }}</p>
+    <!-- CONTENT -->
+    <div class="p-4 flex flex-col gap-2">
+      <h3 class="text-cream font-semibold text-sm leading-snug">
+        {{ item.name }}
+      </h3>
 
-      <div class="flex items-center justify-between mt-auto">
-        <div>
-          <span class="font-display text-gold text-lg">RM{{ item.price.toFixed(2) }}</span>
-          <span v-if="item.altPrice" class="text-cream/30 text-xs ml-1">/ RM{{ item.altPrice.toFixed(2) }}</span>
+      <p class="text-cream/50 text-xs line-clamp-2">
+        {{ item.desc }}
+      </p>
+
+      <!-- PRICE + BUTTON -->
+      <div class="flex items-center justify-between mt-2">
+        <div class="flex flex-col">
+          <span class="text-gold font-display text-lg">
+            RM{{ item.price.toFixed(2) }}
+          </span>
+
+          <span
+            v-if="item.altPrice"
+            class="text-cream/40 text-[10px]"
+          >
+            / RM{{ item.altPrice.toFixed(2) }}
+          </span>
         </div>
+
         <button
-          class="flex items-center gap-1 text-xs border border-gold/40 text-gold px-3 py-1.5 hover:bg-gold hover:text-charcoal transition-all duration-200 active:scale-95"
           @click="$emit('add', { id: item.id, name: item.name, price: item.price })"
+          class="flex items-center gap-1 px-3 py-1.5 text-xs border border-gold/40 text-gold hover:bg-gold hover:text-charcoal transition-all duration-200 active:scale-95"
         >
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              d="M12 5v14m7-7H5"/>
           </svg>
           Add
         </button>
@@ -42,29 +76,11 @@
 const props = defineProps({
   item: { type: Object, required: true },
 })
+
 defineEmits(['add'])
 
-const categoryEmojis = {
-  thai: ['🌶️', '🍚', '🍜', '🍲', '🐟', '🥬', '🍗'],
-  western: ['🍗', '🍝', '🐟', '🥩'],
-  drinks: ['☕', '🧋', '🍵', '🥤'],
-  snacks: ['🍟', '🥚', '🍳'],
-}
-
-const emoji = computed(() => {
-  const pool = categoryEmojis[props.item.category] || ['🍽️']
-  return pool[props.item.id % pool.length]
-})
-
-const bgColors = {
-  thai:    ['#3D0000', '#2D1505'],
-  western: ['#1A2D00', '#2D1F0E'],
-  drinks:  ['#1A1A3D', '#2D1F0E'],
-  snacks:  ['#2D2000', '#1A1008'],
-}
-
-const bgStyle = computed(() => {
-  const [from, to] = bgColors[props.item.category] || ['#2D1F0E', '#1A1008']
-  return `background: linear-gradient(135deg, ${from}, ${to})`
+const imageSrc = computed(() => {
+  // uses /public/menu/1.png, 2.png, etc.
+  return `/menu/${props.item.image}.webp`
 })
 </script>
