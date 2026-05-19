@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: #1A1008;
+  color: #FDF6EC;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1A1008; }
+::-webkit-scrollbar-thumb { background: #C9A84C; border-radius: 3px; }
+
+/* ── Gold Divider ──────────────────────────────────────── */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+}
+
+/* ── Section Title ─────────────────────────────────────── */
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  color: #C9A84C;
+  letter-spacing: 0.05em;
+}
+
+/* ── Thai Border ───────────────────────────────────────── */
+.thai-border {
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  position: relative;
+}
+.thai-border::before,
+.thai-border::after {
+  content: '✦';
+  position: absolute;
+  color: #C9A84C;
+  font-size: 0.75rem;
+}
+.thai-border::before { top: -0.5rem; left: -0.5rem; }
+.thai-border::after  { bottom: -0.5rem; right: -0.5rem; }
+
+/* ── Buttons ────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #C9A84C;
+  color: #1A1008;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #E8C97A;
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.4);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #C9A84C;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0;
+  border: 1px solid #C9A84C;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-outline:hover {
+  background-color: #C9A84C;
+  color: #1A1008;
+}
+
+/* ── Cards ──────────────────────────────────────────────── */
+.menu-card {
+  background: #2D1F0E;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  transition: all 0.3s ease;
+}
+.menu-card:hover {
+  border-color: rgba(201, 168, 76, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ── Inputs ─────────────────────────────────────────────── */
+.thai-input {
+  width: 100%;
+  background-color: #2D1F0E;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: #FDF6EC;
+  padding: 0.75rem 1rem;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  border-radius: 0;
+}
+.thai-input::placeholder { color: rgba(253, 246, 236, 0.35); }
+.thai-input:focus { border-color: #C9A84C; }
+
+.thai-select {
+  width: 100%;
+  background-color: #2D1F0E;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: #FDF6EC;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23C9A84C' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+.thai-select:focus { border-color: #C9A84C; }
+
+/* ── Badges ─────────────────────────────────────────────── */
+.badge-popular {
+  background: #7B0000;
+  color: #E8C97A;
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 600;
+}
+
+/* ── Cart Dot ───────────────────────────────────────────── */
+.cart-dot {
+  background: #7B0000;
+  color: #E8C97A;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+/* ── Nav Link ───────────────────────────────────────────── */
+.nav-link {
+  font-family: 'Sarabun', sans-serif;
+  font-weight: 500;
+  color: rgba(253, 246, 236, 0.8);
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-link:hover,
+.nav-link.active,
+.nav-link.router-link-active {
+  color: #C9A84C;
+}
+
+/* ── Page Hero ──────────────────────────────────────────── */
+.page-hero {
+  background: linear-gradient(180deg, #550000 0%, #1A1008 100%);
+  padding: 80px 1rem 40px;
+  text-align: center;
+}
+
+/* ── Ornamental Line ────────────────────────────────────── */
+.ornamental-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #C9A84C;
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+}
+.ornamental-line::before,
+.ornamental-line::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.4), transparent);
+}
+
+/* ── Form Label ─────────────────────────────────────────── */
+.form-label {
+  display: block;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(253, 246, 236, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-float { animation: float 3s ease-in-out infinite; }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-fade-in { animation: fadeIn 0.8s ease forwards; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up { animation: slideUp 0.6s ease forwards; }

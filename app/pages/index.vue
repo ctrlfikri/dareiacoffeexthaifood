@@ -1,0 +1,356 @@
+<template>
+  <main>
+    <!-- ═══════════════════════════════════════════════
+         HERO SECTION
+    ═══════════════════════════════════════════════ -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <!-- Background -->
+      <div class="absolute inset-0 bg-thai-pattern bg-charcoal" />
+      <div
+        class="absolute inset-0"
+        style="background: radial-gradient(ellipse at 60% 40%, rgba(123,0,0,0.7) 0%, rgba(26,16,8,0.95) 70%)"
+      />
+
+      <!-- Decorative gold corners -->
+      <div class="absolute top-24 left-6 text-gold/20 text-6xl font-display select-none hidden lg:block">✦</div>
+      <div class="absolute top-24 right-6 text-gold/20 text-6xl font-display select-none hidden lg:block">✦</div>
+      <div class="absolute bottom-24 left-6 text-gold/10 text-4xl font-display select-none hidden lg:block">◆</div>
+      <div class="absolute bottom-24 right-6 text-gold/10 text-4xl font-display select-none hidden lg:block">◆</div>
+
+      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto pt-24">
+        <!-- Eyebrow -->
+        <div class="ornamental-line text-xs mb-8 justify-center">
+          <span class="tracking-[0.4em] text-gold/70 uppercase">Western · Thai · Coffee</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-display text-cream mb-2 leading-tight">
+          <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider">DAREIA</span>
+          <span class="block text-gold text-xl sm:text-2xl md:text-3xl tracking-[0.3em] mt-1">COFFEE × THAI FOOD</span>
+        </h1>
+
+        <!-- Tagline -->
+        <p class="font-serif text-cream/70 text-xl sm:text-2xl italic mt-6 mb-2">
+          Where Thailand meets Penang, one plate at a time.
+        </p>
+
+        <!-- Set Lunch Promo Badge -->
+        <div
+          class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-primary/60 border border-gold/40 px-6 py-3 mt-6 mb-10"
+        >
+          <span class="text-gold font-display text-sm tracking-widest">🌶️ SET LUNCH PROMO</span>
+          <span class="hidden sm:block text-gold/40">|</span>
+          <span class="text-cream/80 font-sans text-sm">Mon–Sun &nbsp;·&nbsp; 12PM–3PM &nbsp;·&nbsp; From RM12.90</span>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <NuxtLink to="/menu" class="btn-primary px-10 py-4 text-sm">
+            Explore Menu
+          </NuxtLink>
+          <NuxtLink to="/booking" class="btn-outline px-10 py-4 text-sm">
+            Book a Table
+          </NuxtLink>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="mt-16 animate-float text-gold/40">
+          <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SET LUNCH PROMO STRIP
+    ═══════════════════════════════════════════════ -->
+    <section class="bg-primary py-10 px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-8">
+          <h2 class="section-title text-2xl sm:text-3xl mb-2">Set Lunch Promo</h2>
+          <p class="text-cream/60 font-sans text-sm">Monday – Sunday &nbsp;|&nbsp; 12PM – 3PM</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div
+            v-for="combo in combos"
+            :key="combo.label"
+            class="bg-primary-dark/60 border border-gold/30 p-5 text-center hover:border-gold/70 transition-colors"
+          >
+            <div class="text-3xl mb-2">{{ combo.icon }}</div>
+            <div class="font-display text-gold text-lg tracking-widest mb-1">{{ combo.label }}</div>
+            <div class="text-cream/70 font-sans text-sm mb-3">{{ combo.desc }}</div>
+            <div class="font-display text-cream text-2xl">{{ combo.price }}</div>
+            <div class="text-cream/40 font-sans text-xs mt-2">+ Syrup Lime Iced or Black Tea Lime Iced</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         BEST SELLERS
+    ═══════════════════════════════════════════════ -->
+    <section class="py-20 px-4 bg-charcoal bg-thai-pattern">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-14">
+          <div class="ornamental-line text-xs mb-4 justify-center">
+            <span class="tracking-[0.4em] text-gold/50 text-xs">MUST TRY</span>
+          </div>
+          <h2 class="section-title text-3xl sm:text-4xl mb-3">Our Best Sellers</h2>
+          <p class="text-cream/50 font-sans max-w-md mx-auto text-sm">
+            Dishes our regulars can't stop ordering. Crowd-pleasing, full of flavour, straight from the heart of Thailand.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            v-for="item in bestSellers"
+            :key="item.name"
+            class="menu-card group cursor-pointer"
+            @click="goToMenu"
+          >
+            <!-- Image placeholder with emoji -->
+            <div
+              class="h-48 flex items-center justify-center text-6xl"
+              :style="`background: linear-gradient(135deg, ${item.bgFrom}, ${item.bgTo})`"
+            >
+              {{ item.emoji }}
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-2 mb-1">
+                <h3 class="font-sans font-semibold text-cream text-base leading-tight">{{ item.name }}</h3>
+                <span class="badge-popular whitespace-nowrap flex-shrink-0">Best Seller</span>
+              </div>
+              <p class="text-cream/50 font-sans text-xs mb-3 leading-relaxed">{{ item.desc }}</p>
+              <div class="flex items-center justify-between">
+                <span class="font-display text-gold text-lg">{{ item.price }}</span>
+                <button
+                  class="text-xs border border-gold/40 text-gold px-3 py-1.5 hover:bg-gold hover:text-charcoal transition-colors"
+                  @click.stop="addToCartDirect(item)"
+                >
+                  + Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <NuxtLink to="/menu" class="btn-outline px-10">View Full Menu</NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         OPERATING HOURS
+    ═══════════════════════════════════════════════ -->
+    <section class="py-20 px-4 bg-charcoal-light">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="section-title text-3xl sm:text-4xl mb-3">Operating Hours</h2>
+          <p class="text-cream/50 font-sans text-sm">We're open every day — come visit us!</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-xl mx-auto">
+          <div
+            v-for="row in operatingHours"
+            :key="row.day"
+            :class="[
+              'flex justify-between items-center px-5 py-3 border',
+              row.today
+                ? 'border-gold bg-gold/10 text-gold'
+                : 'border-gold/20 text-cream/70',
+            ]"
+          >
+            <span class="font-sans font-medium text-sm">
+              {{ row.day }}
+              <span v-if="row.today" class="ml-2 text-xs bg-gold text-charcoal px-2 py-0.5">TODAY</span>
+            </span>
+            <span class="font-sans text-sm">{{ row.hours }}</span>
+          </div>
+        </div>
+        <div class="text-center mt-8">
+          <div class="inline-flex items-center gap-2 text-gold/60 font-sans text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            Reservations: +6019-8808724
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         MAP + DISTANCE TO LANDMARKS
+    ═══════════════════════════════════════════════ -->
+    <section class="py-20 px-4 bg-charcoal">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="section-title text-3xl sm:text-4xl mb-3">Find Us</h2>
+          <p class="text-cream/50 font-sans text-sm">
+            No 39A, Medan Angsana, Farlim, Air Itam, Penang
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <!-- Map embed -->
+          <div class="border border-gold/30 overflow-hidden">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.183921481467!2d100.28017157567724!3d5.3889169353057875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac1002259bc15%3A0x660a2d369418163a!2sDAREIA%20COFFEE%20FARLIM%20X%20THAI%20FOOD!5e0!3m2!1sen!2smy!4v1779167574966!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+
+          <!-- Distance to landmarks -->
+          <div class="space-y-4">
+            <h3 class="font-sans font-semibold text-gold text-sm uppercase tracking-widest mb-5">
+              Distance from Tourist Hotspots
+            </h3>
+            <div
+              v-for="lm in landmarks"
+              :key="lm.name"
+              class="flex items-center gap-4 bg-charcoal-light border border-gold/15 px-5 py-4 hover:border-gold/40 transition-colors"
+            >
+              <div class="text-2xl flex-shrink-0">{{ lm.icon }}</div>
+              <div class="flex-1 min-w-0">
+                <p class="font-sans font-medium text-cream text-sm">{{ lm.name }}</p>
+                <p class="text-cream/40 font-sans text-xs">{{ lm.area }}</p>
+              </div>
+              <div class="text-right flex-shrink-0">
+                <p class="font-display text-gold text-base">{{ lm.distance }}</p>
+                <p class="text-cream/40 font-sans text-xs">{{ lm.time }}</p>
+              </div>
+            </div>
+
+            <a
+              href="https://maps.google.com/?q=No+39A+Medan+Angsana+Farlim+Air+Itam+Penang"
+              target="_blank"
+              class="btn-primary w-full text-center flex items-center justify-center gap-2 mt-6"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              </svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         SOCIAL PROOF / CTA STRIP
+    ═══════════════════════════════════════════════ -->
+    <section class="bg-primary py-14 px-4 text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="font-serif text-cream/80 text-xl italic mb-2">"Best Thai food in Penang, hands down."</p>
+        <p class="text-gold/60 font-sans text-xs tracking-widest uppercase mb-8">— Our regulars</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <NuxtLink to="/menu" class="btn-primary px-10">Order Now</NuxtLink>
+          <a
+            href="https://www.instagram.com/dareiacoffeexthaifood"
+            target="_blank"
+            class="btn-outline px-10"
+          >Follow Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</template>
+
+<script setup>
+const { addItem, openCart } = useCart()
+const router = useRouter()
+
+const combos = [
+  { label: 'KOMBO A', icon: '🍚', desc: 'Nasi + Drinks', price: 'RM12.90', bgFrom: '#550000', bgTo: '#2D1F0E' },
+  { label: 'KOMBO B', icon: '🍗', desc: 'Chicken + Drinks', price: 'RM18.90', bgFrom: '#3D2200', bgTo: '#2D1F0E' },
+  { label: 'KOMBO C', icon: '🍝', desc: 'Pasta + Drinks', price: 'RM19.90', bgFrom: '#1A3300', bgTo: '#2D1F0E' },
+]
+
+const bestSellers = [
+  {
+    id: 101,
+    name: 'Ikan Siakap Masak Tiga Rasa Thai',
+    desc: 'Whole snapper in sweet-sour-spicy Thai three-flavour sauce. A house signature.',
+    price: 'RM35.90',
+    priceNum: 35.90,
+    emoji: '🐟',
+    bgFrom: '#1A3300',
+    bgTo: '#2D1F0E',
+  },
+  {
+    id: 102,
+    name: 'Nasi Goreng Kampung Thai',
+    desc: 'Classic fried rice with anchovies, chilli, and aromatic Thai herbs.',
+    price: 'RM9.90',
+    priceNum: 9.90,
+    emoji: '🍚',
+    bgFrom: '#550000',
+    bgTo: '#2D1F0E',
+  },
+  {
+    id: 103,
+    name: 'Tom Yam Berkrim Seafood',
+    desc: 'Rich creamy Tom Yam broth loaded with fresh seafood. Spicy & fragrant.',
+    price: 'RM14.90',
+    priceNum: 14.90,
+    emoji: '🍲',
+    bgFrom: '#3D2200',
+    bgTo: '#2D1F0E',
+  },
+  {
+    id: 104,
+    name: 'Ayam Pad Prik Thai',
+    desc: 'Stir-fried chicken with Thai chilli paste. Simple, bold, addictive.',
+    price: 'RM9.90',
+    priceNum: 9.90,
+    emoji: '🌶️',
+    bgFrom: '#550000',
+    bgTo: '#1A1008',
+  },
+  {
+    id: 105,
+    name: 'Spaghetti Aglio Olio Spicy Prawn',
+    desc: 'Al dente spaghetti with garlic, olive oil, and juicy spicy prawns.',
+    price: 'RM17.90',
+    priceNum: 17.90,
+    emoji: '🍝',
+    bgFrom: '#1A2D00',
+    bgTo: '#2D1F0E',
+  },
+  {
+    id: 106,
+    name: 'Thai Milk Tea (Cha Yen)',
+    desc: 'Authentic Thai iced milk tea. Creamy, sweet, and the perfect companion.',
+    price: 'RM7.90',
+    priceNum: 7.90,
+    emoji: '🧋',
+    bgFrom: '#3D2200',
+    bgTo: '#550000',
+  },
+]
+
+const today = new Date().getDay() // 0=Sun, 1=Mon...
+const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
+const operatingHours = [
+  'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday',
+].map((day, i) => ({
+  day,
+  hours: '11:00 AM – 10:00 PM',
+  today: dayNames[today] === day,
+}))
+
+const landmarks = [
+  { icon: '🚡', name: 'Penang Hill (Bukit Bendera)', area: 'Air Itam', distance: '1.2 km', time: '~5 min drive' },
+  { icon: '🛕', name: 'Kek Lok Si Temple', area: 'Air Itam', distance: '2.0 km', time: '~8 min drive' },
+  { icon: '🏖️', name: 'Batu Ferringhi Beach', area: 'Penang', distance: '12 km', time: '~20 min drive' },
+  { icon: '🏙️', name: 'Georgetown Heritage Zone', area: 'Georgetown', distance: '8 km', time: '~15 min drive' },
+  { icon: '🌊', name: 'Penang National Park', area: 'Teluk Bahang', distance: '18 km', time: '~30 min drive' },
+]
+
+function goToMenu() {
+  router.push('/menu')
+}
+
+function addToCartDirect(item) {
+  addItem({ id: item.id, name: item.name, price: item.priceNum })
+  openCart()
+}
+</script>
