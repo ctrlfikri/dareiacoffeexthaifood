@@ -21,7 +21,7 @@
             style="background: linear-gradient(135deg, #550000 0%, #2D1F0E 60%, #3D2200 100%)"
           >
             <div class="text-center">
-              <div class="text-8xl mb-4">🌶️</div>
+              <div class="text-8xl mb-4"><img src="store.jpg"></div>
               <div class="font-display text-gold text-2xl tracking-widest">DAREIA</div>
               <div class="font-sans text-cream/50 text-xs tracking-[0.4em] mt-1">COFFEE × THAI FOOD</div>
             </div>

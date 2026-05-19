@@ -3,89 +3,62 @@
     <!-- ═══════════════════════════════════════════════
          HERO SECTION
     ═══════════════════════════════════════════════ -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <!-- Background -->
-      <div class="absolute inset-0 bg-thai-pattern bg-charcoal" />
-      <div
-        class="absolute inset-0"
-        style="background: radial-gradient(ellipse at 60% 40%, rgba(123,0,0,0.7) 0%, rgba(26,16,8,0.95) 70%)"
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+    <!-- Background store layer -->
+    <div class="absolute inset-0">
+      <img
+        src="/store.jpg"
+        class="w-full h-full object-cover blur-sm opacity-20 scale-105"
       />
+      <div class="absolute inset-0 bg-charcoal/85"></div>
+    </div>
 
-      <!-- Decorative gold corners -->
-      <div class="absolute top-24 left-6 text-gold/20 text-6xl font-display select-none hidden lg:block">✦</div>
-      <div class="absolute top-24 right-6 text-gold/20 text-6xl font-display select-none hidden lg:block">✦</div>
-      <div class="absolute bottom-24 left-6 text-gold/10 text-4xl font-display select-none hidden lg:block">◆</div>
-      <div class="absolute bottom-24 right-6 text-gold/10 text-4xl font-display select-none hidden lg:block">◆</div>
+    <!-- Content wrapper -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 pt-24 flex flex-col items-center">
 
-      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto pt-24">
-        <!-- Eyebrow -->
-        <div class="ornamental-line text-xs mb-8 justify-center">
-          <span class="tracking-[0.4em] text-gold/70 uppercase">Western · Thai · Coffee</span>
-        </div>
-
-        <!-- Main Title -->
-        <h1 class="font-display text-cream mb-2 leading-tight">
-          <span class="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider">DAREIA</span>
-          <span class="block text-gold text-xl sm:text-2xl md:text-3xl tracking-[0.3em] mt-1">COFFEE × THAI FOOD</span>
+      <!-- 🧠 HERO TEXT (smaller + cleaner hierarchy) -->
+      <div class="text-center mb-8">
+        <h1 class="font-display text-cream text-4xl md:text-6xl tracking-wider">
+          DAREIA
         </h1>
 
-        <!-- Tagline -->
-        <p class="font-serif text-cream/70 text-xl sm:text-2xl italic mt-6 mb-2">
-          Where Thailand meets Penang, one plate at a time.
+        <p class="text-gold tracking-[0.35em] text-xs md:text-sm mt-2">
+          COFFEE × THAI FOOD
         </p>
-
-        <!-- Set Lunch Promo Badge -->
-        <div
-          class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 bg-primary/60 border border-gold/40 px-6 py-3 mt-6 mb-10"
-        >
-          <span class="text-gold font-display text-sm tracking-widest">🌶️ SET LUNCH PROMO</span>
-          <span class="hidden sm:block text-gold/40">|</span>
-          <span class="text-cream/80 font-sans text-sm">Mon–Sun &nbsp;·&nbsp; 12PM–3PM &nbsp;·&nbsp; From RM12.90</span>
-        </div>
-
-        <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <NuxtLink to="/menu" class="btn-primary px-10 py-4 text-sm">
-            Explore Menu
-          </NuxtLink>
-          <NuxtLink to="/booking" class="btn-outline px-10 py-4 text-sm">
-            Book a Table
-          </NuxtLink>
-        </div>
-
-        <!-- Scroll indicator -->
-        <div class="mt-16 animate-float text-gold/40">
-          <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"/>
-          </svg>
-        </div>
       </div>
-    </section>
 
-    <!-- ═══════════════════════════════════════════════
-         SET LUNCH PROMO STRIP
-    ═══════════════════════════════════════════════ -->
-    <section class="bg-primary py-10 px-4">
-      <div class="max-w-5xl mx-auto">
-        <div class="text-center mb-8">
-          <h2 class="section-title text-2xl sm:text-3xl mb-2">Set Lunch Promo</h2>
-          <p class="text-cream/60 font-sans text-sm">Monday – Sunday &nbsp;|&nbsp; 12PM – 3PM</p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div
-            v-for="combo in combos"
-            :key="combo.label"
-            class="bg-primary-dark/60 border border-gold/30 p-5 text-center hover:border-gold/70 transition-colors"
-          >
-            <div class="text-3xl mb-2">{{ combo.icon }}</div>
-            <div class="font-display text-gold text-lg tracking-widest mb-1">{{ combo.label }}</div>
-            <div class="text-cream/70 font-sans text-sm mb-3">{{ combo.desc }}</div>
-            <div class="font-display text-cream text-2xl">{{ combo.price }}</div>
-            <div class="text-cream/40 font-sans text-xs mt-2">+ Syrup Lime Iced or Black Tea Lime Iced</div>
+      <!-- 🎯 FIXED RATIO CAROUSEL -->
+      <div class="w-full flex justify-center">
+
+        <div class="w-full max-w-5xl">
+          <div class="aspect-[5/2] md:aspect-[5/2] lg:aspect-[5/2] overflow-hidden rounded-xl border border-gold/20 shadow-2xl">
+
+            <HeroCarousel :slides="heroSlides" />
+
           </div>
         </div>
+
       </div>
-    </section>
+
+      <!-- CTA -->
+      <div class="text-center mt-10">
+        <p class="text-cream/60 max-w-xl mx-auto text-sm md:text-base">
+          Where Thailand meets Penang — crafted flavors, bold comfort, unforgettable meals.
+        </p>
+
+        <div class="flex gap-4 justify-center mt-6">
+          <NuxtLink to="/menu" class="btn-primary px-8 py-3">
+            Explore Menu
+          </NuxtLink>
+          <NuxtLink to="/booking" class="btn-outline px-8 py-3">
+            Book Table
+          </NuxtLink>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
     <!-- ═══════════════════════════════════════════════
          BEST SELLERS
@@ -353,4 +326,25 @@ function addToCartDirect(item) {
   addItem({ id: item.id, name: item.name, price: item.priceNum })
   openCart()
 }
+
+const heroSlides = [
+  {
+    image: '/banners/1.webp',
+    tag: 'Signature Dish',
+    title: 'Authentic Thai Flavours',
+    desc: 'Bold, spicy, and crafted fresh every day.'
+  },
+  {
+    image: '/banners/1.webp',
+    tag: 'Coffee Culture',
+    title: 'Artisan Coffee Experience',
+    desc: 'From espresso to signature lattes.'
+  },
+  {
+    image: '/banners/1.webp',
+    tag: 'Set Lunch Promo',
+    title: 'Affordable Premium Meals',
+    desc: 'From RM12.90 — daily satisfaction.'
+  }
+]
 </script>

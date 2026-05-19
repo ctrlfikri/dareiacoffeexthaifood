@@ -8,10 +8,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex flex-col leading-none">
-          <span class="font-display text-gold text-sm md:text-base tracking-widest">DAREIA</span>
-          <span class="font-sans text-cream/60 text-xs tracking-[0.3em] uppercase">Coffee × Thai Food</span>
-        </NuxtLink>
+    <NuxtLink to="/" class="flex flex-col leading-none">
+      <img
+        src="/logo.webp"
+        alt="Dareia"
+        class="h-6 md:h-8 w-auto object-contain mb-1"
+      />
+    </NuxtLink>
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex items-center gap-8">
