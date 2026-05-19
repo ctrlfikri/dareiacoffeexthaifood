@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@vercel/analytics'],
 
   css: [resolve(__dirname, 'app/assets/css/main.css')],
 
