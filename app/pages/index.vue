@@ -278,13 +278,7 @@
 <script setup>
 const { addItem, openCart } = useCart()
 const router = useRouter()
-
-const combos = [
-  { label: 'KOMBO A', icon: '🍚', desc: 'Nasi + Drinks', price: 'RM12.90', bgFrom: '#550000', bgTo: '#2D1F0E' },
-  { label: 'KOMBO B', icon: '🍗', desc: 'Chicken + Drinks', price: 'RM18.90', bgFrom: '#3D2200', bgTo: '#2D1F0E' },
-  { label: 'KOMBO C', icon: '🍝', desc: 'Pasta + Drinks', price: 'RM19.90', bgFrom: '#1A3300', bgTo: '#2D1F0E' },
-]
-
+  
 const bestSellers = [
   {
     id: 1,
@@ -366,10 +360,10 @@ const heroSlides = [
     desc: 'Bold, spicy, and crafted fresh every day.'
   },
   {
-    image: '/banners/1.webp',
+    image: '/banners/2.webp',
     tag: 'Coffee Culture',
-    title: 'Artisan Coffee Experience',
-    desc: 'From espresso to signature lattes.'
+    title: 'Tea Time with Dareia!',
+    desc: 'think tea time, think dareia'
   },
   {
     image: '/banners/1.webp',
