@@ -3,7 +3,7 @@
     <!-- Page Hero -->
     <div class="page-hero pb-16">
       <div class="ornamental-line text-xs mb-4 justify-center max-w-xs mx-auto">
-        <span class="tracking-[0.4em] text-gold/50 text-xs">OUR STORY</span>
+        <span class="tracking-widest text-gold/50 text-xs">OUR STORY</span>
       </div>
       <h1 class="section-title text-3xl sm:text-5xl mb-3">About Us</h1>
       <p class="text-cream/50 font-sans text-sm max-w-md mx-auto">
@@ -169,7 +169,7 @@ const values = [
   {
     icon: '🤝',
     title: 'Genuine Warmth',
-    desc: 'You're not just a customer here. You're family. We treat every guest with the same love we put into our food.',
+    desc: "You're not just a customer here. You're family. We treat every guest with the same love we put into our food" ,
   },
   {
     icon: '🌶️',
