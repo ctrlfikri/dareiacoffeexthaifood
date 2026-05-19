@@ -3,14 +3,10 @@
     <!-- ═══════════════════════════════════════════════
          HERO SECTION
     ═══════════════════════════════════════════════ -->
-    <section class="w-full relative">
-
-  <div class="w-full h-[55vh] md:h-[65vh] lg:h-[70vh] overflow-hidden">
-
-    <HeroCarousel :slides="heroSlides" />
-
+<section class="w-full relative">
+  <div class="w-full h-[55vh] md:h-[65vh] lg:h-[70vh] overflow-hidden relative">
+    <HeroCarousel class="w-full h-full" :slides="heroSlides" />
   </div>
-
 </section>
 
 <section class="relative py-24 px-4 overflow-hidden">

@@ -1,41 +1,52 @@
 <template>
-  <div class="relative w-full h-[70vh] md:h-[80vh] overflow-hidden rounded-none">
+  <div class="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
 
     <!-- Slides -->
     <div
-      class="flex transition-transform duration-700 ease-out h-full"
+      class="flex h-full transition-transform duration-700 ease-out"
       :style="`transform: translateX(-${active * 100}%)`"
     >
+
       <div
         v-for="(slide, i) in slides"
         :key="i"
-        class="min-w-full h-full relative"
+        class="min-w-full h-full relative overflow-hidden"
       >
+
+        <!-- IMAGE (FIXED) -->
         <img
           :src="slide.image"
-          class="absolute w-full h-full object-fit bg-black/20"
+          class="inset-0 w-full h-full object-cover"
           loading="lazy"
         />
 
-        <!-- Dark overlay -->
-        <div class="absolute inset-0 bg-black/40"></div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/45"></div>
 
-        <!-- Text -->
-        <div class="absolute bottom-10 left-6 md:left-16 text-left max-w-xl">
-          <p class="text-gold text-xs tracking-[0.4em] uppercase mb-2">
+        <!-- TEXT -->
+        <div class="absolute inset-x-0 bottom-0 p-6 md:p-16 m-8">
+        <div class="max-w-xl">
+
+            <p class="text-gold text-xs tracking-[0.4em] uppercase mb-2">
             {{ slide.tag }}
-          </p>
-          <h2 class="text-2xl md:text-5xl font-display text-cream leading-tight">
+            </p>
+
+            <h2 class="text-2xl md:text-5xl font-display text-cream leading-tight break-words">
             {{ slide.title }}
-          </h2>
-          <p class="text-cream/70 mt-2 text-sm md:text-base">
+            </h2>
+
+            <p class="text-cream/70 mt-2 text-sm md:text-base">
             {{ slide.desc }}
-          </p>
+            </p>
+
         </div>
+        </div>
+
       </div>
+
     </div>
 
-    <!-- Controls -->
+    <!-- DOTS -->
     <div class="absolute bottom-4 right-4 flex gap-2">
       <button
         v-for="(s, i) in slides"
@@ -46,7 +57,6 @@
       />
     </div>
 
-    <!-- Auto slide -->
   </div>
 </template>
 
